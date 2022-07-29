@@ -1,0 +1,17 @@
+header {
+  height: 7vh;
+  background-color: $secondColor;
+  &.topic {
+    color: $primaryColor;
+    padding: 1rem 5rem;
+    font-size: xx-large;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.everything {
+  color: rgb(188, 195, 199);
+  font-size: 20px;
+}

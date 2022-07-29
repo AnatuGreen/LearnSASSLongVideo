@@ -1,0 +1,116 @@
+$primaryColor: blue;
+$accentColor: #e4c580;
+$secondColor: white;
+$textColor: (
+  "primary": white,
+  "secondary": black,
+);
+$fontWeight: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 900,
+);
+$fontSize: (
+  "mainHeader": 5rem,
+  "subHead": 2rem,
+  "parag": 1.2rem,
+);
+
+@import "./header";
+
+body {
+  background-color: $secondColor;
+  //   padding: 0 5em;
+  margin: 0;
+  box-sizing: border-box;
+  //Nesting
+  & .intro {
+    font-weight: map-get($map: $fontWeight, $key: bold);
+    color: map-get($map: $textColor, $key: primary);
+  }
+  & h3 {
+    font-size: map-get($fontSize, subHead);
+    color: $secondColor;
+  }
+}
+
+h1 {
+  color: $secondColor;
+
+  //Mapping
+  font-size: map-get($map: $fontSize, $key: mainHeader);
+}
+
+.more {
+  color: $accentColor;
+}
+
+.heroSection {
+  height: 45rem;
+  background-color: $primaryColor;
+  padding: 0 5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  align-content: center;
+
+  & .introImage {
+    height: 100%;
+  }
+
+  & input {
+    height: 50px;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 40px;
+    border: none;
+    width: 50%;
+  }
+}
+
+.flex-Half {
+  width: 50%;
+  & p {
+    color: $secondColor;
+    font-size: map-get($fontSize, parag);
+  }
+}
+
+.heroImageCont {
+  display: flex;
+  justify-content: center;
+}
+
+.subscribeBtn {
+  width: 100px;
+  height: 50px;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  margin-left: 20px;
+  width: 10vw;
+}
+
+.dynamicSpan {
+  border-right: 0.05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+footer {
+  height: 5rem;
+  background-color: $primaryColor;
+  margin-top: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $secondColor;
+}
